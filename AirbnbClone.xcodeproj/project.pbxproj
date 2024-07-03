@@ -14,6 +14,7 @@
 		3F4BD5192C343C1D0066779B /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4BD5182C343C1D0066779B /* ExploreView.swift */; };
 		3F4BD51B2C34437F0066779B /* ListingItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4BD51A2C34437F0066779B /* ListingItemView.swift */; };
 		3F4BD51D2C353E780066779B /* SearchAndFilterBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4BD51C2C353E780066779B /* SearchAndFilterBar.swift */; };
+		3F4BD51F2C3543880066779B /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4BD51E2C3543880066779B /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		3F4BD5182C343C1D0066779B /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		3F4BD51A2C34437F0066779B /* ListingItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingItemView.swift; sourceTree = "<group>"; };
 		3F4BD51C2C353E780066779B /* SearchAndFilterBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAndFilterBar.swift; sourceTree = "<group>"; };
+		3F4BD51E2C3543880066779B /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				3F4BD5182C343C1D0066779B /* ExploreView.swift */,
+				3F4BD51E2C3543880066779B /* TestView.swift */,
 				3F4BD51C2C353E780066779B /* SearchAndFilterBar.swift */,
 			);
 			path = Explore;
@@ -242,6 +245,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F4BD51F2C3543880066779B /* TestView.swift in Sources */,
 				3F4BD51B2C34437F0066779B /* ListingItemView.swift in Sources */,
 				3F4BD5012C32ECA00066779B /* ContentView.swift in Sources */,
 				3F4BD5192C343C1D0066779B /* ExploreView.swift in Sources */,
