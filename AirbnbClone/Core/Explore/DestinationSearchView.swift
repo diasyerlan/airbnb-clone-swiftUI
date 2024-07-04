@@ -77,7 +77,7 @@ struct DestinationSearchView: View {
                     selectedOption = .location
                 }
             }
-            VStack {
+            VStack(alignment: .leading) {
                 if(selectedOption == .date) {
                     Text("When's your trip?")
                         .font(.title2)
