@@ -10,19 +10,15 @@ import SwiftUI
 struct ListingItemView: View {
     var body: some View {
         VStack(spacing: 8) {
-            TabView {
-                ForEach(0..<4, id: \.self) { _ in
-                    Rectangle()
-                }
-            }
-            .frame(height: 320)
-            .clipShape(RoundedRectangle(cornerRadius: 10))
-            .tabViewStyle(.page)
+            ListingCarouselView()
+                .frame(height: 320)
+                .clipShape(RoundedRectangle(cornerRadius: 10))
             
             HStack(alignment: .top) {
                 VStack (alignment: .leading){
                     Text("Miami, Florida")
                         .fontWeight(.semibold)
+                        .foregroundStyle(.black)
                     Text("12 mi away")
                         .foregroundStyle(.gray)
                     Text("Nov 3 - 10")
@@ -32,12 +28,14 @@ struct ListingItemView: View {
                             .fontWeight(.semibold)
                         Text("night")
                     }
+                    .foregroundColor(.black)
                 }
                 Spacer()
                 HStack(spacing: 2) {
                     Image(systemName: "star.fill")
                     Text("4.86")
                 }
+                .foregroundColor(.black)
             }
             .font(.footnote)
         }
