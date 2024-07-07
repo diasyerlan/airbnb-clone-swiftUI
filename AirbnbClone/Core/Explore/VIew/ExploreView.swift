@@ -13,11 +13,11 @@ struct ExploreView: View {
     var body: some View {
         NavigationStack {
             if showDesinationSearchView {
-                DestinationSearchView(show: $showDesinationSearchView)
+                DestinationSearchView(viewModel: viewModel, show: $showDesinationSearchView)
             }
             else {
                 ScrollView {
-                    SearchAndFilterBar()
+                    SearchAndFilterBar(location: $viewModel.location)
                         .onTapGesture {
                             withAnimation(.snappy) {
                                 showDesinationSearchView.toggle()

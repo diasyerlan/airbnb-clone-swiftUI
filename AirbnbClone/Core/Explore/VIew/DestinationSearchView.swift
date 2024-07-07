@@ -12,9 +12,8 @@ enum DestinationSearchOptions {
 }
 
 struct DestinationSearchView: View {
-    
+    @ObservedObject var viewModel: ExploreViewModel
     @Binding var show: Bool
-    @State private var destination = ""
     @State private var selectedOption = DestinationSearchOptions.location
     @State private var guestNumber = 0
     @State private var startDate = Date()
@@ -26,6 +25,7 @@ struct DestinationSearchView: View {
                 Button {
                     withAnimation(.snappy) {
                         show.toggle()
+                        viewModel.updateListingBySearch()
                     }
                 }
             label: {
@@ -34,9 +34,10 @@ struct DestinationSearchView: View {
                     .foregroundColor(.black)
             }
                 Spacer()
-                if !destination.isEmpty {
+                if !viewModel.location.isEmpty {
                     Button {
-                        destination = ""
+                        viewModel.location = ""
+                        viewModel.updateListingBySearch()
                     } label: {
                         Text("Clear")
                             .font(.subheadline)
@@ -54,8 +55,12 @@ struct DestinationSearchView: View {
                     
                     HStack {
                         Image(systemName: "magnifyingglass")
-                        TextField("Search destinations", text: $destination)
+                        TextField("Search destinations", text: $viewModel.location)
                             .font(.subheadline)
+                            .onSubmit {
+                                viewModel.updateListingBySearch()
+                                show.toggle()
+                            }
                     }
                     .frame(height: 44)
                     .padding(.horizontal)
@@ -141,9 +146,8 @@ struct DestinationSearchView: View {
         
     }
 }
-
 #Preview {
-    DestinationSearchView(show: .constant(false))
+    DestinationSearchView(viewModel: ExploreViewModel(service: ExploreService()), show: .constant(false))
 }
 
 struct CollapsibleDestinationViewModifier: ViewModifier {
