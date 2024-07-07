@@ -25,9 +25,13 @@ struct Listing: Identifiable, Codable, Hashable {
     let state: String
     let title: String
     var rating: Double
+    var roundedRating: String {
+        String(format: "%.1f", rating)
+    }
     var features: [ListingFeatures]
     var amenities: [ListingAmenities]
     let type: ListingType
+    
     
 }
 

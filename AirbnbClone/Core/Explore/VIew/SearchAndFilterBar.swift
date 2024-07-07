@@ -8,15 +8,19 @@
 import SwiftUI
 
 struct SearchAndFilterBar: View {
+    @Binding var location: String
     var body: some View {
         HStack {
             Image(systemName: "magnifyingglass")
             VStack(alignment: .leading, spacing: 2) {
-                Text("Where to?")
-                Text("Anywhere - Any week - Add guests")
+                Text(location.isEmpty ? "Where to?" : location)
+                    .font(.footnote)
+                    .fontWeight(.semibold)
+                
+                Text( "\(location.isEmpty ? "Anywhere - " : "")Any week - Add guests")
+                    .font(.caption2)
+                    .foregroundStyle(.gray)
             }
-            .font(.footnote)
-            .foregroundColor(.gray)
             Spacer()
             Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
                 Image(systemName: "line.3.horizontal.decrease.circle")
@@ -36,5 +40,5 @@ struct SearchAndFilterBar: View {
 }
 
 #Preview {
-    SearchAndFilterBar()
+    SearchAndFilterBar(location: .constant("Los Angeles"))
 }
